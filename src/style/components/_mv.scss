@@ -1,0 +1,117 @@
+.mv {
+    position: relative;
+    background-color: $color-white;
+
+    &__canvas {
+        opacity: 0;
+    }
+
+    &__title {
+        position: absolute;
+        top: get_vw(130);
+        left: get_vw(80);
+        transform: translate(0, -50%);
+        overflow: hidden;
+        z-index: $z-4;
+        @include sp {
+            top: get_vw_sp(80);
+            left: get_vw_sp(25);
+        }
+
+        &--inner {
+            text-align: center;
+            overflow: hidden;
+        }
+
+        &--text {
+            display: inline-block;
+            transform: translate3d(0, -100%, 0);
+            letter-spacing: 5.5px;
+            font-size: get_vw(120);
+            font-family: $font-all;
+            color: $color-red;
+            @include sp {
+                font-size: get_vw_sp(50);
+            }
+        }
+    }
+    &__sub-title {
+        position: absolute;
+        top: get_vw(240);
+        left: get_vw(80);
+        transform: translate(0, -50%);
+        overflow: hidden;
+        @include sp {
+            top: get_vw_sp(120);
+            left: get_vw_sp(25);
+        }
+
+        &--inner {
+            text-align: center;
+            overflow: hidden;
+        }
+
+        &--text {
+            display: inline-block;
+            transform: translate3d(0, 100%, 0);
+            color: $color-red;
+            font-family: $font-all;
+            font-size: get_vw(40);
+            @include sp {
+                font-size: get_vw_sp(20);
+            }
+        }
+    }
+
+    &__link {
+        position: absolute;
+        left: get_vw(80);
+        color: $color-red;
+        font-family: $font-all;
+        font-size: get_vw(35);
+        transition: $easeCustom1 0.6s;
+        text-decoration: none;
+        opacity: 0;
+        @include sp {
+            left: get_vw_sp(25);
+            font-size: get_vw_sp(26);
+        }
+        &::after {
+            content: attr(data-hover);
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            transform: rotateX(90deg);
+            transition: $easeCustom1 0.3s;
+            opacity: 0;
+            color: $color-black;
+            height: 0;
+        }
+        &:hover {
+            color: transparent;
+
+            &::after {
+                transform: rotateX(0deg);
+                top: 0;
+                opacity: 1;
+                height: 100%;
+            }
+        }
+        &:visited {
+            text-decoration: none;
+        }
+
+        &--home {
+            bottom: get_vw(100);
+            @include sp {
+                bottom: get_vw_sp(80);
+            }
+        }
+        &--git {
+            bottom: get_vw(50);
+            @include sp {
+                bottom: get_vw_sp(40);
+            }
+        }
+    }
+}
