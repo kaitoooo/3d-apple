@@ -102,12 +102,18 @@
         }
 
         &--home {
-            bottom: get_vw(100);
+            bottom: get_vw(130);
+            @include sp {
+                bottom: get_vw_sp(120);
+            }
+        }
+        &--git {
+            bottom: get_vw(90);
             @include sp {
                 bottom: get_vw_sp(80);
             }
         }
-        &--git {
+        &--note {
             bottom: get_vw(50);
             @include sp {
                 bottom: get_vw_sp(40);

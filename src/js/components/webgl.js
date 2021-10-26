@@ -18,6 +18,7 @@ export default class Webgl {
             mvSubTitle: document.querySelectorAll('[data-mv="subTitle"]'),
             mvHomeLink: document.querySelector('[data-mv="homeLink"]'),
             mvGitLink: document.querySelector('[data-mv="gitLink"]'),
+            mvNoteLink: document.querySelector('[data-mv="noteLink"]'),
         };
         this.three = {
             scene: null,
@@ -224,6 +225,15 @@ export default class Webgl {
         );
         tl.to(
             this.elms.mvGitLink,
+            {
+                duration: 0.8,
+                ease: 'power2.easeOut',
+                opacity: 1,
+            },
+            1.6
+        );
+        tl.to(
+            this.elms.mvNoteLink,
             {
                 duration: 0.8,
                 ease: 'power2.easeOut',
